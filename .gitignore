@@ -1,0 +1,6 @@
+# Ignore large models
+CXRGen/LungDetection/models/*.pt
+CXRGen/annotator/ckpts/*.pth
+
+CXRGen/annotator/ckpts/*.pth
+CXRGen/LungDetection/models/*.pt
