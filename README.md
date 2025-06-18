@@ -1,5 +1,5 @@
 
-> **Notice:** This repo is under development
+**Notice:** This repo is under development
 
 # VICCA
 VICCA: Visual Interpretation and Comprehension of Chest X-ray Anomalies in Generated Report Without Human Feedback [\[paper\]](https://doi.org/10.1016/j.mlwa.2025.100684)
@@ -58,6 +58,6 @@ Run the inference.py
 
 ```bash
   python inference.py \
-    --image_path VG/38708899-5132e206-88cb58cf-d55a7065-6cbc983d.jpg \
-    --text_prompt "Cardiomegaly with mild pulmonary vascular congestion."
+    --image_path="path/to/your/img/file" \
+    --text_prompt="your prompt."
 ```
