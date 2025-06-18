@@ -59,3 +59,5 @@ Run the inference.py
     --image_path="path/to/your/img/file" \
     --text_prompt="your prompt."
 ```
+
+## Training
