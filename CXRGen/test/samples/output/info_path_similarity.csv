@@ -1,0 +1,5 @@
+gen_sample_path,similarity_rate
+CXRGen/test/samples/output/gen_out_inv_sample1.jpg,tensor(0.4322)
+CXRGen/test/samples/output/gen_out_inv_sample2.jpg,tensor(0.6105)
+CXRGen/test/samples/output/gen_out_inv_sample3.jpg,tensor(0.4623)
+CXRGen/test/samples/output/gen_out_inv_sample4.jpg,tensor(0.4523)
