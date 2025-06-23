@@ -1,0 +1,4 @@
+# ninja log v5
+3	2721	1750088000880687572	/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/build/temp.linux-x86_64-cpython-310/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/groundingdino/models/GroundingDINO/csrc/cuda_version.o	a16876e76f074d6f
+0	4276	1750088002429669439	/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/build/temp.linux-x86_64-cpython-310/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/groundingdino/models/GroundingDINO/csrc/MsDeformAttn/ms_deform_attn_cpu.o	f53b128910faa732
+4	14168	1750088010287577387	/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/build/temp.linux-x86_64-cpython-310/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA/VG/groundingdino/models/GroundingDINO/csrc/vision.o	a44a6fedb8e95ad5
