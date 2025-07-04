@@ -30,7 +30,7 @@ Please cite them as well if you found this code useful.
     
 ## Badges
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+<!--- Add badges from somewhere like: [shields.io](https://shields.io/) -->
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
@@ -64,3 +64,17 @@ Run the inference.py
 
 
 ## Training
+In VICCA, the models were trained separately and later integrated for the final assessment. Joint training of all components is currently under development. If you wish to train the models independently for your own objectives, please follow the instructions in this section.
+
+### Visual Grounding Model
+
+We use the [Grounding DINO Model](https://github.com/IDEA-Research/GroundingDINO.git) as the base model for the VG and [Open-GroundingDino](https://github.com/longzw1997/Open-GroundingDino.git) for the training. We integrated a new text encoder for the CXR images (BiomedVLP-CXR-BERT). Please refer to the paper for more details. The dataset we use for this task is [MS-CXR](https://physionet.org/content/ms-cxr/1.1.0/) and [VinDr-CXR](https://physionet.org/content/vindr-cxr/1.0.0/) from Physionet.
+
+```bash
+cd VG/
+python -m torch.distributed.launch  --nproc_per_node=1 main.py \\
+--output_dir ./logs/ -c ./config/cfg_coco.py \\
+--datasets ./datasets/odvg/datasets_vg_example.json \\
+--pretrain_model_path ./logs/[*].pth \\
+--options text_encoder_type=./weights/BiomedVLP-CXR-BERT/ --start_epoch [*]
+```
