@@ -1,3 +1,21 @@
+
+
+## Training Visual Grounding Model
+
+We use the [Grounding DINO Model](https://github.com/IDEA-Research/GroundingDINO.git) as the base model for the VG and [Open-GroundingDino](https://github.com/longzw1997/Open-GroundingDino.git) for the training. We integrated a new text encoder for the CXR images (BiomedVLP-CXR-BERT). Please refer to the paper for more details. The dataset we use for this task is [MS-CXR](https://physionet.org/content/ms-cxr/1.1.0/) and [VinDr-CXR](https://physionet.org/content/vindr-cxr/1.0.0/) from Physionet.
+
+```bash
+cd VG/
+python -m torch.distributed.launch  --nproc_per_node=1 main.py \\
+--output_dir ./logs/ -c ./config/cfg_coco.py \\
+--datasets ./datasets/odvg/datasets_vg_example.json \\
+--pretrain_model_path ./logs/[*].pth \\
+--options text_encoder_type=./weights/BiomedVLP-CXR-BERT/ --start_epoch [*]
+```
+
+
+
+<!--
 <div align="center">
   <img src="./.asset/grounding_dino_logo.png" width="30%">
 </div>
@@ -27,7 +45,7 @@ PyTorch implementation and pretrained models for Grounding DINO. For details, se
 - :maple_leaf: [[Watch the Step by Step Tutorial about GroundingDINO by Roboflow AI](https://youtu.be/cMa77r3YrDk)]
 - :mushroom: [[GroundingDINO: Automated Dataset Annotation and Evaluation by Roboflow AI](https://youtu.be/C4NqaRBz_Kw)]
 - :hibiscus: [[Accelerate Image Annotation with SAM and GroundingDINO by Roboflow AI](https://youtu.be/oEQYStnF2l8)]
-- :white_flower: [[Autodistill: Train YOLOv8 with ZERO Annotations based on Grounding-DINO and Grounded-SAM by Roboflow AI](https://github.com/autodistill/autodistill)]
+- :white_flower: [[Autodistill: Train YOLOv8 with ZERO Annotations based on Grounding-DINO and Grounded-SAM by Roboflow AI](https://github.com/autodistill/autodistill)] -->
 
 <!-- Grounding DINO Methods | 
 [![arXiv](https://img.shields.io/badge/arXiv-2303.05499-b31b1b.svg)](https://arxiv.org/abs/2303.05499) 
@@ -40,6 +58,7 @@ PyTorch implementation and pretrained models for Grounding DINO. For details, se
 [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/oEQYStnF2l8)
 [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/C4NqaRBz_Kw) -->
 
+<!--
 ## :sparkles: Highlight Projects
 
 - [Semantic-SAM: a universal image segmentation model to enable segment and recognize anything at any desired granularity.](https://github.com/UX-Decoder/Semantic-SAM), 
@@ -52,6 +71,7 @@ PyTorch implementation and pretrained models for Grounding DINO. For details, se
 - [X-GPT: Conversational Visual Agent supported by X-Decoder](https://github.com/microsoft/X-Decoder/tree/xgpt)
 - [GLIGEN: Open-Set Grounded Text-to-Image Generation](https://github.com/gligen/GLIGEN)
 - [LLaVA: Large Language and Vision Assistant](https://github.com/haotian-liu/LLaVA)
+-->
 
 <!-- Extensions | [Grounding DINO with Segment Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything); [Grounding DINO with Stable Diffusion](demo/image_editing_with_groundingdino_stablediffusion.ipynb); [Grounding DINO with GLIGEN](demo/image_editing_with_groundingdino_gligen.ipynb)  -->
 
@@ -59,7 +79,7 @@ PyTorch implementation and pretrained models for Grounding DINO. For details, se
 
 <!-- Official PyTorch implementation of [Grounding DINO](https://arxiv.org/abs/2303.05499), a stronger open-set object detector. Code is available now! -->
 
-
+<!--
 ## :bulb: Highlight
 
 - **Open-Set Detection.** Detect **everything** with language!
@@ -264,8 +284,9 @@ python demo/test_ap_on_coco.py \
 
 
 ## :luggage: Checkpoints
-
+-->
 <!-- insert a table -->
+<!--
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -361,7 +382,5 @@ If you find our work helpful for your research, please consider citing the follo
   year={2023}
 }
 ```
-
-
-
+-->
 
