@@ -1,0 +1,17 @@
+{
+  "train": [
+    {
+      "root": "physionet.org/files/mimic-cxr-jpg/2.0.0/",
+      "anno": "PhD/step2/Open-GroundingDino/datasets/odvg/train_vg.json",
+      "dataset_mode": "odvg"
+    }
+  ],
+  "val": [
+    {
+      "root": "physionet.org/files/mimic-cxr-jpg/2.0.0/",
+      "anno": "PhD/step2/Open-GroundingDino/datasets/odvg/test_fn.json",
+      "label_map": null,
+      "dataset_mode": "coco"
+    }
+  ]
+}

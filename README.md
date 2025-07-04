@@ -14,6 +14,7 @@ VICCA: Visual Interpretation and Comprehension of Chest X-ray Anomalies in Gener
 
  This repo build upon the awesome work of the following repos:
  - [Grounding Dino](https://github.com/IDEA-Research/GroundingDINO.git)
+ - [Open-GroundingDino](https://github.com/longzw1997/Open-GroundingDino.git)
  - [ControlNet](https://github.com/lllyasviel/ControlNet.git)
  - [DETR](https://github.com/facebookresearch/detr.git)
  - [Lung Segmentation](https://github.com/IlliaOvcharenko/lung-segmentation.git)
