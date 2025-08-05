@@ -15,7 +15,7 @@ import sys
 import argparse
 from ast import literal_eval
 
-sys.path.append('/path/to/VICCA')
+sys.path.append('/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA')
 
 from CXRGen import sample_generation
 from DETR import svc
@@ -49,7 +49,7 @@ def extract_tensor(value):
 
 def gen_cxr(weight_path, image_path, text_prompt, num_samples, output_path):
     parser = sample_generation.get_args_parser()
-    args = parser.parse_args([])  # Use empty args to override CLI
+    args = parser.parse_args([])
     args.weight_path = weight_path
     args.image_path = image_path
     args.text_prompt = text_prompt
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     args = get_args_parser().parse_args()
 
     gen_cxr(args.weight_path_gencxr, args.image_path, args.text_prompt, args.num_samples, args.output_path)
-    time.sleep(10)  # ensure outputs are written
+    time.sleep(4)  # ensure outputs are written
 
     df = pd.read_csv(args.output_path + "info_path_similarity.csv")
     sim_ratios = [extract_tensor(val) for val in df["similarity_rate"]]
