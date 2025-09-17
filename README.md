@@ -3,7 +3,7 @@
 # VICCA
 VICCA: Visual Interpretation and Comprehension of Chest X-ray Anomalies in Generated Report Without Human Feedback [\[paper\]](https://doi.org/10.1016/j.mlwa.2025.100684)
 
-
+![vicca_case](figure_A_1_case_1.png)
 
 ## Authors
 
