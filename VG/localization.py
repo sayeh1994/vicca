@@ -37,7 +37,7 @@ def convert_boxes_to_numpy(boxes, image_source):
     return bbox
 
 def main(args):
-    model = load_model("VG/groundingdino/config/GroundingDINO_SwinT_OGC.py", args.weight_path)
+    model = load_model("VG/groundingdino/config/GroundingDINO_SwinT_OGC_2.py", args.weight_path)
 
     IMAGE_PATH = args.image_path
     TEXT_PROMPT = args.text_prompt
