@@ -15,7 +15,7 @@ import sys
 import argparse
 from ast import literal_eval
 
-sys.path.append('/path/to/VICCA')
+# sys.path.append('/home/gholipos-admin/Desktop/Thesis/Training_Code/VICCA')
 
 from CXRGen import sample_generation
 from DETR import svc

@@ -146,7 +146,8 @@ def main(args):
         info_dict["gen_sample_path"].append(fn)
         info_dict["similarity_rate"].append(generateScore(args.image_path, fn).mean())
     with open(args.output_path+"prompt.txt", "w") as file:
-        file.write(prompt)
+        file.write(prompt + "\n")
+        file.write(args.image_path + "\n")
     
     df = pd.DataFrame(info_dict)
     df.to_csv(args.output_path+"info_path_similarity.csv", index=False)

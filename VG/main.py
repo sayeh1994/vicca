@@ -22,7 +22,7 @@ from datasets import build_dataset, get_coco_api_from_dataset
 from engine import evaluate, train_one_epoch
 
 from groundingdino.util.utils import clean_state_dict
-sys.path.insert(1,"/path/to/physionet.org/files/mimic-cxr-jpg/2.0.0/")
+sys.path.insert(1,"/home/gholipos/physionet.org/files/mimic-cxr-jpg/2.0.0/")
 
 def get_args_parser():
     parser = argparse.ArgumentParser('Set transformer detector', add_help=False)

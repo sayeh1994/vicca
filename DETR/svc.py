@@ -16,6 +16,8 @@ from .models import build_model
 
 import argparse
 from .arguments import get_args_parser
+import time
+import os
 
 torch.set_grad_enabled(False);
 CLASSES = ['right lung', 'right upper lung zone', 'right mid lung zone', 'right lower lung zone', 'right hilar structures', 
@@ -76,6 +78,15 @@ def main(args):
         T.ToTensor(),
         T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
+
+    max_wait = 30  # seconds
+    elapsed = 0
+
+    while not os.path.exists(args.img_gen) and elapsed < max_wait:
+        time.sleep(1)
+        elapsed += 1
+    if not os.path.exists(args.img_gen):
+        raise TimeoutError("Generated image did not appear after 30 seconds.")
     
     image_org_pl, image_org_cv = read_image(args.img_org)
     image_gen_pl, image_gen_cv = read_image(args.img_gen)
@@ -95,17 +106,13 @@ def main(args):
         if CLASSES[cl] == 'svc':
             svc_gen_bbox = [int(x1), int(y1), int(w), int(h)]
     
+    if svc_gen_bbox is None:
+        shift_x , shift_y = 0 , 0
+        return shift_x , shift_y
+
+    
     shift_x , shift_y = svc_gen_bbox[0] - svc_org_bbox[0], svc_gen_bbox[1] - svc_org_bbox[1]
-    # print(shift_x , shift_y)
-            
-    # for bbox in xyxy:
-    #     bbox1 = [bbox[0], bbox[1], bbox[2]-bbox[0], bbox[3]-bbox[1]]
-    #     bbox2 = [
-    #                 bbox[0] + shift_x,  # x-coordinate
-    #                 bbox[1] + shift_y,  # y-coordinate
-    #                 bbox[2] - bbox[0],            # width remains the same
-    #                 bbox[3] - bbox[1]          # height remains the same
-    #                                 ]
+
     return shift_x , shift_y
     
 if __name__ == '__main__':

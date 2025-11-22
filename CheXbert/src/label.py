@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import sys
 
-sys.path.append(os.path.abspath('/path/to/CheXbert/src'))
+sys.path.append(os.path.abspath('/home/gholipos-admin/Desktop/Thesis/Training_Code/Entity_Summarization/CheXbert/src'))
 
 import utils
 from models.bert_labeler import bert_labeler
