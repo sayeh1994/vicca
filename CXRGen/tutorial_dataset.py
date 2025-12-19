@@ -4,7 +4,7 @@ import numpy as np
 
 from torch.utils.data import Dataset
 import sys  
-sys.path.insert(1, '/home/gholipos/physionet.org/files/mimic-cxr-jpg/2.0.0/')
+sys.path.insert(1, '/path/to/files/mimic-cxr-jpg/2.0.0/')
 
 class MyDataset(Dataset):
     def __init__(self):
