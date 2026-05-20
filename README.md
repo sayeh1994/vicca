@@ -1,4 +1,6 @@
-**Notice:** This repo is under development. I have created a Hugging Face space for testing the inference: [vicca](https://huggingface.co/spaces/sayehghp/vicca)
+## Update
+
+- This repo is under development. I have created a Hugging Face space for testing the inference: [vicca](https://huggingface.co/spaces/sayehghp/vicca)
 
 # VICCA
 VICCA: Visual Interpretation and Comprehension of Chest X-ray Anomalies in Generated Report Without Human Feedback [\[paper\]](https://doi.org/10.1016/j.mlwa.2025.100684)
@@ -64,3 +66,7 @@ Run the inference.py
 
 
 ## Training
+
+## TODO
+- Add the Training Scripts
+- Creating a library out of it
